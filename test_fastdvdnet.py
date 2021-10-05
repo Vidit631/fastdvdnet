@@ -28,13 +28,13 @@ def save_out_seq(seqnoisy, seqclean, save_dir, sigmaval, suffix, save_noisy):
         # Build Outname
         fext = OUTIMGEXT
         noisy_name = os.path.join(save_dir,
-                                  ('n{}_{}').format(sigmaval, idx) + fext)
+                                  ('n{}_{}').format(sigmaval, str(idx).zfill(2)) + fext)
         if len(suffix) == 0:
             out_name = os.path.join(save_dir,
-                                    ('n{}_FastDVDnet_{}').format(sigmaval, idx) + fext)
+                                    ('n{}_FastDVDnet_{}').format(sigmaval, str(idx).zfill(2)) + fext)
         else:
             out_name = os.path.join(save_dir,
-                                    ('n{}_FastDVDnet_{}_{}').format(sigmaval, suffix, idx) + fext)
+                                    ('n{}_FastDVDnet_{}_{}').format(sigmaval, suffix, str(idx).zfill(2)) + fext)
 
         # Save result
         if save_noisy:
